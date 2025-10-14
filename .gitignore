@@ -1,0 +1,43 @@
+# Environment variables (SECRETS - NEVER COMMIT)
+.env
+
+# Virtual Environment
+backend/venv/
+venv/
+env/
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Models (Too Large)
+models/
+*.h5
+*.pkl
+*.pth
+*.pt
+
+# Datasets
+datasets/
+data/
+
+# Outputs
+outputs/
+logs/
+out/
+
+# References
+references/
+
+# Duplicates
+backend - Copy/
+finlit-ai/
+
+# Frontend
+frontend/.next/
+frontend/node_modules/
+
+# IDE
+.vscode/
+.idea/
