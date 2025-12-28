@@ -13,7 +13,7 @@ class FinancialNewsService:
     def __init__(self):
         # NewsAPI.org - Get FREE API key at https://newsapi.org/
         # Sign up and get your key (100 requests/day FREE)
-        self.newsapi_key = "6a753409b3f84eac9470a525ab250f2d"  # Replace with your key
+        self.newsapi_key = "00b29aedb4ae4341a17b3ea58b26e345"  # Replace with your key
         
         # RSS Feeds (No API key needed - always FREE)
         self.rss_feeds = {
@@ -27,15 +27,15 @@ class FinancialNewsService:
         self.cache_file = Path("out/news_cache.json")
         self.cache_duration = 1800  # 30 minutes cache
     
-    def get_cached_news(self):
-        """Get cached news if fresh"""
-        if self.cache_file.exists():
-            with open(self.cache_file, 'r', encoding='utf-8') as f:
-                cache = json.load(f)
-                cache_time = datetime.fromisoformat(cache['timestamp'])
-                if datetime.now() - cache_time < timedelta(seconds=self.cache_duration):
-                    return cache['news']
-        return None
+def get_cached_news(self):
+    if self.cache_file.exists():
+        with open(self.cache_file, 'r', encoding='utf-8') as f:
+            cache = json.load(f)  # <-- can raise JSONDecodeError
+            cache_time = datetime.fromisoformat(cache['timestamp'])  # <-- KeyError/ValueError
+            if datetime.now() - cache_time < timedelta(seconds=self.cache_duration):
+                return cache['news']
+    return None
+
     
     def save_cache(self, news):
         """Save news to cache"""

@@ -14,14 +14,14 @@ app = FastAPI()
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["*"],  # In production, replace with specific origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 # API Keys - REPLACE WITH YOUR KEYS
-GROQ_API_KEY = ""GROQ_API_KEY""  # ← PASTE YOUR GROQ KEY HERE
+GROQ_API_KEY = "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"  # ← PASTE YOUR GROQ KEY HERE
 NEWS_API_KEY = "NEWS_API_KEY"
 
 # Initialize Groq client
@@ -155,7 +155,7 @@ async def get_audio():
     return FileResponse(audio_path, media_type="audio/mpeg")
 
 @app.get("/news")
-async def get_news(lang: str = "en"):
+async def get_news(lang: str):
     try:
         url = f"https://newsapi.org/v2/top-headlines"
         params = {
