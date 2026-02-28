@@ -21,7 +21,7 @@ app.add_middleware(
 )
 
 # API Keys - REPLACE WITH YOUR KEYS
-GROQ_API_KEY = "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"  # ← PASTE YOUR GROQ KEY HERE
+GROQ_API_KEY = ""  # ← PASTE YOUR GROQ KEY HERE
 NEWS_API_KEY = "NEWS_API_KEY"
 
 # Initialize Groq client
