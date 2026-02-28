@@ -60,21 +60,18 @@ text
 - Train models locally after setup
 - Requires Python 3.8+ and Node.js
 
-Add this section after "4. Install Dependencies":​
-
-text
 ### 4.5. Setup Environment Variables
-Create a `.env` file in the project root:
+Copy the example environment file and fill in your API keys:
+```
+cp .env.example .env
+```
+Edit `.env` and add your keys:
+```
 GROQ_API_KEY=your_groq_api_key_here
-
-text
-Get your API key from https://console.groq.com
-Save and commit:​
-
-text
-git add README.md
-git commit -m "Update README with environment setup instructions"
-git push origin main
+NEWS_API_KEY=your_newsapi_key_here
+```
+- Get your Groq API key from https://console.groq.com
+- Get your free News API key from https://newsapi.org
 
 ## License
 MIT License

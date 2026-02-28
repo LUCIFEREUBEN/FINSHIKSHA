@@ -4,11 +4,14 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from typing import Optional, Dict
 from pathlib import Path
+from dotenv import load_dotenv
 from gtts import gTTS
 from groq import Groq
 import requests
 import os
 from datetime import datetime
+
+load_dotenv()
 
 app = FastAPI()
 
