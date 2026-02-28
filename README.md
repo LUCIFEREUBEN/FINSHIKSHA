@@ -5,7 +5,7 @@ AI-powered chatbot for financial education in multiple languages.
 ## Setup Instructions
 
 ### 1. Clone Repository
-git clone https://github.com/iceman2100/finlit-ai.git
+git clone LUCIFEREUBEN/FINSHIKSHA 
 cd finlit-ai
 
 text
