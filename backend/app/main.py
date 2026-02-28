@@ -7,6 +7,7 @@ from pathlib import Path
 from gtts import gTTS
 from groq import Groq
 import requests
+import os
 from datetime import datetime
 
 app = FastAPI()
@@ -20,9 +21,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# API Keys - REPLACE WITH YOUR KEYS
-GROQ_API_KEY = ""  # ← PASTE YOUR GROQ KEY HERE
-NEWS_API_KEY = "NEWS_API_KEY"
+# API Keys - Set these as environment variables (e.g., in Vercel dashboard or .env file)
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
+NEWS_API_KEY = os.environ.get("NEWS_API_KEY", "")
 
 # Initialize Groq client
 groq_client = Groq(api_key=GROQ_API_KEY)

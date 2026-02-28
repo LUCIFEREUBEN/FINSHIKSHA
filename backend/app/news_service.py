@@ -2,6 +2,7 @@
 Real-time Financial News Service
 Fetches news from multiple sources: NewsAPI, RSS feeds, official sources
 """
+import os
 import requests
 from datetime import datetime, timedelta
 import feedparser
@@ -13,7 +14,7 @@ class FinancialNewsService:
     def __init__(self):
         # NewsAPI.org - Get FREE API key at https://newsapi.org/
         # Sign up and get your key (100 requests/day FREE)
-        self.newsapi_key = ""  # Replace with your key
+        self.newsapi_key = os.environ.get("NEWS_API_KEY", "")
         
         # RSS Feeds (No API key needed - always FREE)
         self.rss_feeds = {
