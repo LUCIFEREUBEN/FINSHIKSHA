@@ -13,7 +13,7 @@ class FinancialNewsService:
     def __init__(self):
         # NewsAPI.org - Get FREE API key at https://newsapi.org/
         # Sign up and get your key (100 requests/day FREE)
-        self.newsapi_key = "00b29aedb4ae4341a17b3ea58b26e345"  # Replace with your key
+        self.newsapi_key = ""  # Replace with your key
         
         # RSS Feeds (No API key needed - always FREE)
         self.rss_feeds = {
