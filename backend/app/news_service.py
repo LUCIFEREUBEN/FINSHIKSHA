@@ -9,6 +9,9 @@ import feedparser
 from typing import List, Dict
 import json
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class FinancialNewsService:
     def __init__(self):
